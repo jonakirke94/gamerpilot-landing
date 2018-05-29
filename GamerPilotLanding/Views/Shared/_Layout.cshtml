@@ -37,7 +37,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a asp-controller="Home" asp-action="About" class="nav-links">Om os</a></li>
+                    @*<li><a asp-controller="Home" asp-action="About" class="nav-links">Om os</a></li>*@
                     <li><a asp-controller="Home" asp-action="Foraeldre" class="nav-links">Til forældrene</a></li>
                     <li><a asp-controller="Home" asp-action="Panel" class="button havelock">Få tidlig adgang</a></li>
                 </ul>
@@ -54,26 +54,36 @@
                 <div class="stripe">
 
                     <div class="row">
-                      
-                        
 
-                        <div class="col-md-6 col-md-offset-3">
+
+
+                        <div class="col-md-8 col-md-offset-2">
                             <h3>Få at vide, når vi lancerer! (Spamfri)</h3>
                             <form action="subscribe" method="post" class="form-inline">
-                                <input type="email" placeholder="Din Email" class="subscribe_input"/>
-                                <input type="submit" class="button havelock subscribe_btn" value="Skriv op"/>
+                                <input type="email" placeholder="Din Email" class="subscribe_input" />
+                                <input type="submit" class="button havelock subscribe_btn" value="Skriv op" />
                             </form>
-                        </div>
-                        
-                        <div class="col-md-12">
-                            <div class="company-info">
-                                <p>&copy; 2018 - GamerPilot - CVR: 39306085</p>
+                            
+                            <div class="links">
+                                <a href="#">Spørgeskema til unge</a>
+                                <a href="#">Spørgeskema til forældre</a>
                             </div>
-
                         </div>
-                    </div>
 
-                </div>
+                        <div class="col-md-6 col-md-offset-3">
+                          
+                    
+                        </div>
+
+                            <div class="col-md-12">
+                                <div class="company-info">
+                                    <p>&copy; 2018 - GamerPilot - CVR: 39306085</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
             </div>
         </div>
 
