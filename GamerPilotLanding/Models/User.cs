@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GamerPilotLanding.Models
 {
-    public class LaunchSubscribtion
+    public class User
     {
         public int Id { get; set; }
 

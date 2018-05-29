@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - GamerPilotLanding</title>
+    <title>@ViewData["Title"] GamerPilot</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -23,30 +23,48 @@
 </head>
 <body>
 
-        <nav class="navbar navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar top-bar"></span>
-                    <span class="icon-bar middle-bar"></span>
-                    <span class="icon-bar bottom-bar"></span>
-                </button>
-                <a class="navbar-brand" asp-controller="home" asp-action="index">GamerPilot</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-navbar">
-                <ul class="nav navbar-nav navbar-right">
-                    @*<li><a asp-controller="Home" asp-action="About" class="nav-links">Om os</a></li>*@
-                    <li><a asp-controller="Home" asp-action="Foraeldre" class="nav-links">Til forældrene</a></li>
-                    <li><a asp-controller="Home" asp-action="Panel" class="button havelock">Få tidlig adgang</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </nav>
+<nav class="navbar navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+        </button>
+        <a class="navbar-brand" asp-controller="home" asp-action="index">GamerPilot</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-navbar">
+        <ul class="nav navbar-nav navbar-right">
+            @*<li><a asp-controller="Home" asp-action="About" class="nav-links">Om os</a></li>*@
+            <li><a asp-controller="Home" asp-action="Parents" class="nav-links">Til forældrene</a></li>
+            <li><a asp-controller="Home" asp-action="Panel" class="button havelock">Få tidlig adgang</a></li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+</nav>
+    
+<!--Notifications -->
+@{
+    <div class="notifications" id="js-visible" >
+        @if (TempData.ContainsKey("Error"))
+        {
+            <div class="notification-error js-notify">@TempData["Error"]</div>
+            <script>
+                document.getElementById("js-visible").style.visibility = "visible";
+            </script>
+        }
+        else if (TempData.ContainsKey("Success"))
+        {
+            <div class="notification-success js-notify"> @TempData["Success"]</div>
+            <script>
+                document.getElementById("js-visible").style.visibility = "visible";
+            </script>        }
+    </div>
+}
 
-
-<div class="container-fluid" >
+<div class="container-fluid">
     @RenderBody()
     <footer>
         <div class="row">
@@ -58,32 +76,40 @@
 
 
                         <div class="col-md-8 col-md-offset-2">
-                            <h3>Få at vide, når vi lancerer! (Spamfri)</h3>
-                            <form action="subscribe" method="post" class="form-inline">
-                                <input type="email" placeholder="Din Email" class="subscribe_input" />
-                                <input type="submit" class="button havelock subscribe_btn" value="Skriv op" />
-                            </form>
+                            <div class="footer-container">
+                                <h3>Få at vide, når vi lancerer! (Spamfri)</h3>
+                                @{
+                                    //Get the current action name, so we can redirect to it on submit
+                                    var action = ViewContext.RouteData.Values["Action"];
+
+                                    <form asp-controller="Home" asp-action="Subscribe" method="post" class="form-inline" asp-route-returnUrl="@action">
+                                        <input type="email" name="email" placeholder="Din Email" class="subscribe_input" required style="margin-left:15%"/>
+                                        <input type="submit" class="button havelock subscribe_btn" value="Skriv op"/>
+                                    </form>
+                                }
+
+                            </div>
                             
-                            <div class="links">
-                                <a href="#">Spørgeskema til unge</a>
-                                <a href="#">Spørgeskema til forældre</a>
+                           
+                        </div>
+                        
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="footer-container">
+                                <a target="_blank" href="https://da.surveymonkey.com/r/5HZWRMM" class="button havelock">Spørgeskema (unge)</a>
+                                <a target="_blank" href="https://da.surveymonkey.com/r/5H6KYT8" class="button havelock">Spørgeskema (forældre)</a>
                             </div>
                         </div>
-
-                        <div class="col-md-6 col-md-offset-3">
-                          
-                    
-                        </div>
-
-                            <div class="col-md-12">
-                                <div class="company-info">
-                                    <p>&copy; 2018 - GamerPilot - CVR: 39306085</p>
-                                </div>
-
-                            </div>
-                        </div>
-
                     </div>
+
+                        <div class="col-md-12">
+                            <div class="company-info">
+                                <p>&copy; 2018 - GamerPilot - CVR: 39306085 - support@gamerpilot.dk</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 

@@ -10,18 +10,18 @@
                 <h1>Bliv en del af GamerPilots Feedbackpanel</h1>
                 <h2>
                     Hos GamerPilot er vi overbeviste om, at vi kun kan lave de bedste videokurser, hvis vi gør det sammen med dem, der skal se dem.
-                    <br/><br/>
+                    <br /><br />
                     Vi har derfor sammensat et panel, der én gang om ugen bliver præsenteret for en video. Det eneste du skal gøre, er at fortælle
                     hvad du kan lide og ikke lide. Møderne er uformelle og afslappede, og bliver typisk holdt på Discord.
-                    
-                    <br/><br/>
+
+                    <br /><br />
                     Lyder det spændende? Skriv dig op nedenfor, så kontakter vi dig hurtigst muligt.
 
                 </h2>
-                 
+
             </div>
-            <form action="panel" method="post" class="form-inline panel-form">
-                <input type="email" placeholder="Din Email" class="subscribe_input_sm" />
+            <form asp-controller="Home" asp-action="PanelRequest" method="post" class="form-inline panel-form" asp-route-returnUrl="Panel">
+                <input type="email" name="email" placeholder="Din Email" class="subscribe_input_sm" required />
                 <input type="submit" class="button havelock subscribe_btn" value="Send" />
             </form>
         </div>
@@ -83,7 +83,7 @@
                     <div class="col-md-6 col-md-offset-3">
                         <div class="survey">
                             <h3>Vi vil elske at høre din mening</h3>
-                            <a class="button havelock">Gå til spørgeskema (unge) <i class="far fa-arrow-alt-circle-right"></i></a>
+                            <a target="_blank" href="https://da.surveymonkey.com/r/5HZWRMM" class="button havelock">Gå til spørgeskema (unge) <i class="far fa-arrow-alt-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -101,8 +101,8 @@
         <div class="col-md-12">
             <div class="hero">
                 <h3>Er der noget,  du synes vi skal vide?</h3>
-                <form action="feedback" method="post" class="form-inline">
-                    <textarea class="feedback_textarea"></textarea>
+                <form asp-controller="Home" asp-action="Feedback" method="post" class="form-inline" asp-route-returnUrl="Panel">
+                    <textarea class="feedback_textarea" name="comment" required></textarea>
                     <input type="submit" class="button havelock feedback_btn" value="Send" />
                 </form>
             </div>

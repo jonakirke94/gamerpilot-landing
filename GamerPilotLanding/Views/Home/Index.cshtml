@@ -12,8 +12,8 @@
                     i Er hahahahahahahahahaa hasdh alskdjalk jsladkj alskdj laksjdlak
                     i Er hahahahahahahahahaa hasdh alskdjalk jsladkj alskdj laksjdlak
                 </h2>
-                <button class="button havelock havelock-nofill">Spørgeskema (forældre)</button>
-                <button class="button havelock">Spørgeskema (unge)</button>
+                <a target="_blank" href="https://da.surveymonkey.com/r/5H6KYT8" class="button havelock havelock-nofill">Spørgeskema (forældre)</a>
+                <a target="_blank" href="https://da.surveymonkey.com/r/5HZWRMM" class="button havelock">Spørgeskema (unge)</a>
             </div>
 
         </div>
@@ -53,8 +53,8 @@
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
                         <h3>Få at vide, når vi lancerer! (Spamfri)</h3>
-                        <form action="subscribe" method="post" class="form-inline">
-                            <input type="email" placeholder="Din Email" class="subscribe_input"/>
+                        <form asp-controller="Home" asp-action="Subscribe" method="post" class="form-inline" asp-route-returnUrl="Index">
+                            <input type="email" name="email" placeholder="Din Email" class="subscribe_input" required/>
                             <input type="submit" class="button havelock subscribe_btn" value="Skriv op"/>
                         </form>
                     </div>
@@ -84,16 +84,16 @@
 </section>
 
 <section id="feedback">
-    <img class="first-gradient" src="https://supernova.studio/images/gradients/bcg-gradient-left.png" alt="">
+    <img class="first-gradient" src="/images/bg-gradient.png" alt="Left gradient background">
 
-    <img class="section-gradient" src="https://supernova.studio/images/gradients/bcg-gradient-left.png" alt="">
+    <img class="section-gradient" src="/images/bg-gradient.png" alt="Right gradient background">
 
     <div class="row">
         <div class="col-md-12">
             <div class="hero">
                 <h3>Er der noget, du synes vi skal vide?</h3>
-                <form action="feedback" method="post" class="form-inline">
-                    <textarea class="feedback_textarea"></textarea>
+                <form asp-controller="Home" asp-action="Feedback" method="post" class="form-inline" asp-route-returnUrl="Index">
+                    <textarea class="feedback_textarea" name="comment" required></textarea>
                     <input type="submit" class="button havelock feedback_btn" value="Send"/>
                 </form>
             </div>
