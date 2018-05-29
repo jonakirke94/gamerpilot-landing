@@ -14,6 +14,9 @@ namespace GamerPilotLanding
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            var confg = Configuration.GetConnectionString("DefaultConnection");
+            var x = 1;
         }
 
         public IConfiguration Configuration { get; }
