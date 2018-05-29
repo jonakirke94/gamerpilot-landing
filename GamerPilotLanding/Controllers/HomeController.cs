@@ -15,17 +15,18 @@ namespace GamerPilotLanding.Controllers
             return View();
         }
 
-        public IActionResult ReadMore()
+        public IActionResult Panel()
         {
-            ViewData["Message"] = "Your application description page.";
+            return View();
+        }
 
+        public IActionResult About()
+        {
             return View();
         }
 
         public IActionResult Foraeldre()
         {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 

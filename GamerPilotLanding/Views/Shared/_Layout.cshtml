@@ -37,8 +37,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="nav-links">Products</a></li>
-                    <li><a class="button havelock">Try Studio for Free</a></li>
+                    <li><a asp-controller="Home" asp-action="About" class="nav-links">Om os</a></li>
+                    <li><a asp-controller="Home" asp-action="Foraeldre" class="nav-links">Til forældrene</a></li>
+                    <li><a asp-controller="Home" asp-action="Panel" class="button havelock">Få tidlig adgang</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -50,7 +51,7 @@
     <footer>
         <div class="row">
             <div class="col-md-12 nopadding">
-                <div class="subscribe-wrapper">
+                <div class="stripe">
 
                     <div class="row">
                       
@@ -60,7 +61,7 @@
                             <h3>Få at vide, når vi lancerer! (Spamfri)</h3>
                             <form action="subscribe" method="post" class="form-inline">
                                 <input type="email" placeholder="Din Email" class="subscribe_input"/>
-                                <input type="submit" class="button havelock subscribe_btn" value="Get Updates"/>
+                                <input type="submit" class="button havelock subscribe_btn" value="Skriv op"/>
                             </form>
                         </div>
                         
