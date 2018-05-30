@@ -18,13 +18,13 @@ namespace GamerPilotLanding.Data
         {
             modelBuilder.Entity<Feedback>().ToTable("Feedback");
             modelBuilder.Entity<User>().ToTable("Subscriptions");
-            modelBuilder.Entity<User>().ToTable("PanelRequests");
+            modelBuilder.Entity<PanelUser>().ToTable("PanelRequests");
 
         }
 
         public DbSet<Feedback> Feedback { get; set; }
         public DbSet<User> Subscriptions { get; set; }
-        public DbSet<User> PanelRequests { get; set; }
+        public DbSet<PanelUser> PanelRequests { get; set; }
 
     }
 }

@@ -88,7 +88,7 @@ namespace GamerPilotLanding.Controllers
                 return RedirectToAction(returnUrl);
             }
 
-            var user = new User()
+            var user = new PanelUser()
             {
                 Email = email,
                 Created = DateTime.Now

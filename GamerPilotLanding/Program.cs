@@ -19,7 +19,12 @@ namespace GamerPilotLanding
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseSetting("detailedErrors", "true")
+                .UseIISIntegration()
                 .UseStartup<Startup>()
+                .CaptureStartupErrors(true)
                 .Build();
     }
 }
