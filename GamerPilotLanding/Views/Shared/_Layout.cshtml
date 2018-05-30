@@ -39,7 +39,7 @@
         <ul class="nav navbar-nav navbar-right">
             @*<li><a asp-controller="Home" asp-action="About" class="nav-links">Om os</a></li>*@
             <li><a asp-controller="Home" asp-action="Parents" class="nav-links">Til forældrene</a></li>
-            <li><a asp-controller="Home" asp-action="Panel" class="button havelock">Få tidlig adgang</a></li>
+            <li><a asp-controller="Home" asp-action="Panel" class="button havelock nav-btn">Få tidlig adgang</a></li>
         </ul>
     </div>
     <!-- /.navbar-collapse -->
@@ -83,7 +83,7 @@
                                     var action = ViewContext.RouteData.Values["Action"];
 
                                     <form asp-controller="Home" asp-action="Subscribe" method="post" class="form-inline" asp-route-returnUrl="@action">
-                                        <input type="email" name="email" placeholder="Din Email" class="subscribe_input" required style="margin-left:15%"/>
+                                        <input type="email" name="email" placeholder="Din Email" class="subscribe_input footer_input" required/>
                                         <input type="submit" class="button havelock subscribe_btn" value="Skriv op"/>
                                     </form>
                                 }
@@ -111,7 +111,7 @@
 
                 </div>
             </div>
-        </div>
+        
 
     </footer>
 </div>
