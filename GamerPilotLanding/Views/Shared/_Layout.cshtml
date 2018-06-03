@@ -4,11 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] GamerPilot</title>
-    
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/main.min.css" />
     <link rel="stylesheet" href="~/css/flipclock.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- fav icon in browser -->
+    <link rel="icon" type="image/x-icon" href="/images/gp-brand.png">
 
 </head>
 <body>
@@ -22,7 +24,9 @@
             <span class="icon-bar middle-bar"></span>
             <span class="icon-bar bottom-bar"></span>
         </button>
-        <a class="navbar-brand" asp-controller="home" asp-action="index">GamerPilot</a>
+        <a class="navbar-brand" asp-controller="home" asp-action="index">
+            <img src="images/gp-logo-c.png" height="38px" alt="GamerPilot Logo" />
+        </a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-navbar">
@@ -67,7 +71,7 @@
 
                         <div class="col-md-8 col-md-offset-2">
                             <div class="footer-container">
-                                <h3>Få at vide, når vi lancerer! (Spamfri)</h3>
+                                <h3>Få at vide når vi lancerer! (Spamfri)</h3>
                                 @{
                                     //Get the current action name, so we can redirect to it on submit
                                     var action = ViewContext.RouteData.Values["Action"];

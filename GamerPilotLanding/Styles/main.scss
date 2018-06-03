@@ -125,6 +125,11 @@ h3 {
     background: $main-dark;
 }
 
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 .navbar-toggle {
     border: none;
     background: transparent !important;
@@ -206,6 +211,8 @@ a:hover {
     .nav-btn {
         margin-left: 17.5px;
     }
+
+
 }
 
 
@@ -363,6 +370,12 @@ header {
         margin-top: 50px;
     }
 
+
+    .hero > a {
+        margin-top: 10px !important;
+    }
+
+
     .hero button {
         margin-bottom: 10px;
     }
@@ -483,10 +496,12 @@ header {
     margin: auto;
     margin-top: 200px;
     height: 500px;
+    max-height: 500px;
+    max-width: 600px;
     width: 600px;
-    background-image: url("/images/kompetence_kort.png");
+    background-image: url("/images/gp-brand.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 
     /* Feedback */
@@ -697,7 +712,15 @@ header {
         .panel-form input {
             max-width: 100%;
         }
-    }
+
+        .panel_hero {
+            margin-top: 50px !important;
+        }
+
+        .panel-form {
+            width: 90% !important;
+        }
+}
 
     .panel_hero {
         z-index: 999;
